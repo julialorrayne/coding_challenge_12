@@ -58,9 +58,22 @@ function removeInventoryItem(item) {
     inventoryList.removeChild(item);
 }
 
+//Task 4: Business Customer Section – Handling Event Bubbling
+const customerCards = document.querySelectorAll('.customer-card');
+const customerSection = document.getElementById('customerSection');
 
+customerCards.forEach(card => {
+    card.addEventListener('click', (event) => {
+        console.log('Customer card clicked ${event.target.textContent}');
+        event.stopPropagation();
+    });
+});
 
-// Write a function that creates a new <li> element representing a product.
-// Use setAttribute to add a class (e.g., "product-item") or a custom data attribute to the <li>.
-// Append the new product item to the inventory list using appendChild.
-// Write a separate function that removes a specific <li> when it is clicked. Use removeChild within the inventory list to remove the clicked item.
+customerSection.addEventListener('click', () => {
+    console.log('Customer section clicked');
+}
+
+//Create a nested structure: a parent container with the id "customerSection" and multiple child elements with the class "customer-card".
+// Attach click event listeners to both the parent container and each customer card.
+// In the customer card's click event handler, log a message (e.g., "Customer card clicked") and call stopPropagation() so that the parent's event handler does not trigger.
+// Test the behavior by temporarily removing stopPropagation() to verify that, without it, clicking a customer card logs messages from both the customer card and the parent container.
