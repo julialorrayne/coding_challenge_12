@@ -12,5 +12,16 @@ function createMetricCard(id,title,initvalue) {
 
 createMetricCard('revenueCard','Revenue','$0');
 
+//Task 2: Updating Dashboard Metrics – Working with NodeLists and Arrays
+createMetricCard("profitCard", "Profit", 0);
+createMetricCard("expenseCard", "Expenses", 0);
+
+const metricCardList = document.querySelectorAll('.metric-card');
+const metricCardArray = Array.from(metricCardList);
+
+metricCardArray.forEach(card => {
+    card.innerHTML += "<p><i> - Updated</i></p>";
+    card.style.backgroundColor = 'greenyellow';
+});
 
 
