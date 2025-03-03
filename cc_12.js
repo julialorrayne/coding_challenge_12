@@ -71,4 +71,4 @@ customerCards.forEach(card => {
 
 customerSection.addEventListener('click', () => {
     console.log('Customer section clicked');
-};
+});
