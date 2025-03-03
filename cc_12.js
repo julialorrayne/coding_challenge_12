@@ -30,9 +30,9 @@ const inventoryList = document.getElementById('inventoryList');
 function addInventoryItem(name,quantity) {
     let newLi = document.createElement('li');
     newLi.setAttribute('class','product-item');
-    newLi.setAttribute('dataset',product);
+    newLi.dataset.product = product;
     newLi.addEventListener('click',() => {removeInventoryItem(newLi)});
-    newLi.textContent = Product;
+    newLi.textContent = product;
     inventoryList.appendChild(newLi);
 };
 
@@ -64,7 +64,7 @@ const customerSection = document.getElementById('customerSection');
 
 customerCards.forEach(card => {
     card.addEventListener('click', (event) => {
-        console.log('Customer card clicked ${event.target.textContent}');
+        console.log(`Customer card clicked ${event.target.textContent}`);
         event.stopPropagation();
     });
 });
