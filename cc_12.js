@@ -71,9 +71,4 @@ customerCards.forEach(card => {
 
 customerSection.addEventListener('click', () => {
     console.log('Customer section clicked');
-}
-
-//Create a nested structure: a parent container with the id "customerSection" and multiple child elements with the class "customer-card".
-// Attach click event listeners to both the parent container and each customer card.
-// In the customer card's click event handler, log a message (e.g., "Customer card clicked") and call stopPropagation() so that the parent's event handler does not trigger.
-// Test the behavior by temporarily removing stopPropagation() to verify that, without it, clicking a customer card logs messages from both the customer card and the parent container.
+};
